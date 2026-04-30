@@ -1,0 +1,10 @@
+for file in $(find src/*.cpp -type f -mmin -10000); do
+	name=$(basename "${file%.*}")
+	echo $name
+	g++ -std=c++23 -c  src/$name.cpp  -I./dependencies/include -I./src -o objs/$name.o
+done
+
+g++ -std=c++23 -c main.cpp -o objs/main.o -I./dependencies/include -I./src
+
+g++  -std=c++23 objs/*.o -I./dependencies/include -I./src -L./dependencies/lib/ -o build/app4 -lcurl -lssl -lcrypto -lgq -lgumbo -lcpr
+
