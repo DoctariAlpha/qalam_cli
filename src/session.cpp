@@ -27,7 +27,7 @@ void session(){
      };
 
     session.SetHeader(header);
-    // std::string username_def = "sshamsi.bee25seecs"; // for now // remove this !!!!
+    // std::string username_def = ""; // for now // remove this !!!!
     std::string password_def = "Student@123"; 
     std::string username{""}, password{""};
     std::cin.ignore();
